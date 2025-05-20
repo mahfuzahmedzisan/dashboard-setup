@@ -19,7 +19,7 @@
 <body
     class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#FDFDFC] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
     <div>
-        <h1 class="text-4xl font-bold">Welcome to Laravel</h1>
+        <h1 class="text-4xl font-bold">Welcome to {{ config('app.name', 'Dashboard') }}</h1>
 
         <p class="mt-4 text-lg font-semibold text-center">Auth Routes</p>
         <div class="flex items-center justify-center mt-4 gap-4">

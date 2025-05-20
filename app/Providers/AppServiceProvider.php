@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use App\View\Components\Backend\Admin\Layout as AdminLayout;
+use App\View\Components\Backend\User\Layout as UserLayout;
+use Illuminate\Support\Facades\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +23,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (Request::is('admin/*')) {
+            Blade::component('admin-layout', AdminLayout::class);
+        }
+        if (Request::is('user/*') || Request::is('dashboard')) {
+            Blade::component('user-layout', UserLayout::class);
+        }
     }
 }
