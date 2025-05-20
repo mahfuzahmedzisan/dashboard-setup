@@ -19,7 +19,10 @@
                 @endauth
             </div>
         </div>
-        <button id="click">Click</button>
+        <div class="mt-8">
+           
+
+        </div>
     </div>
 
 </x-frontend::layout>
