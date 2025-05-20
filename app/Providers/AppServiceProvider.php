@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (Request::is('admin/*')) {
+        if (Request::is('admin/*') && (!Request::is('admin/login', 'admin/logout'))) {
             Blade::component('admin-layout', AdminLayout::class);
         }
         if (Request::is('user/*') || Request::is('dashboard')) {

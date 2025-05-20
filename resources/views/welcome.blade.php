@@ -30,9 +30,9 @@
                 <a href="{{ url('/register') }}" class="btn btn-primary">Register</a>
             @endauth
             @auth('admin')
-                <a href="" class="btn btn-info">Admin Dashboard</a>
+                <a href="{{ url('/admin/dashboard') }}" class="btn btn-info">Admin Dashboard</a>
             @else
-                <a href="" class="btn btn-secondary">Login</a>
+                <a href="{{ url('/admin/login') }}" class="btn btn-secondary">Login</a>
             @endauth
         </div>
     </div>
