@@ -1,6 +1,9 @@
 <x-frontend::layout>
-    <div
-        class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#FDFDFC] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
+
+    <x-slot name="title">Home</x-slot>
+    <x-slot name="page">home</x-slot>
+
+    <div class="text-[#1b1b18] dark:text-[#FDFDFC] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <div>
             <h1 class="text-4xl font-bold">Welcome to {{ config('app.name', 'Dashboard') }}</h1>
 
@@ -19,10 +22,5 @@
                 @endauth
             </div>
         </div>
-        <div class="mt-8">
-           
-
-        </div>
     </div>
-
 </x-frontend::layout>
