@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
     public function create(): View|RedirectResponse
     {
         if (Auth::guard('web')->check()) {
-            return redirect()->intended(route('dashboard', absolute: false));
+            return redirect()->intended(route('user.dashboard', absolute: false));
         }
         return view('auth.login');
     }
@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('user.dashboard', absolute: false));
     }
 
     /**
