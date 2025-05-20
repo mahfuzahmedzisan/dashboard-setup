@@ -73,7 +73,7 @@ Route::middleware('auth:web')->group(function () {
 
 
 // Admin Auth Rotues
-Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
+Route::group(['as' => 'auth.admin.', 'prefix' => 'admin'], function () {
     Route::middleware('guest')->group(function () {
         Route::get('login', [AdminAuthenticatedSessionController::class, 'create'])
             ->name('login');
