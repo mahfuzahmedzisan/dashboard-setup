@@ -1,4 +1,4 @@
-<x-frontend-layout>
+<x-frontend::layout>
     <div
         class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#FDFDFC] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <div>
@@ -19,5 +19,7 @@
                 @endauth
             </div>
         </div>
+        <button id="click">Click</button>
     </div>
-</x-frontend-layout>
+
+</x-frontend::layout>
