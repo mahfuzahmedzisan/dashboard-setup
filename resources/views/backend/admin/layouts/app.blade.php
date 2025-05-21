@@ -45,7 +45,23 @@
     @stack('css')
 </head>
 
-<body x-data="{ sidebar_expanded: true, mobile_menu_open: false }" class="bg-gradient-theme">
+<body x-data="{
+    sidebar_expanded: true,
+    mobile_menu_open: false,
+    mobile: false,
+    init() {
+        // Check the initial width and update `mobile` state
+        this.updateMobileState();
+
+        // Listen to window resize events
+        window.addEventListener('resize', () => {
+            this.updateMobileState();
+        });
+    },
+    updateMobileState() {
+        this.mobile = window.innerWidth <= 768;
+    },
+}" class="bg-gradient-theme">
 
     <!-- Custom Cursor -->
     <div class="cursor-wrapper">
