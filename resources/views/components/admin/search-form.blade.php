@@ -94,7 +94,7 @@
                             <template x-for="result in searchResults" :key="result.id">
                                 <li>
                                     <a href="#"
-                                        class="block py-2 px-3 hover:bg-bg-active dark:hover:bg-gray-700 rounded">
+                                        class="block py-2 px-3 hover:bg-bg-active dark:hover:bg-bg-active/10 rounded">
                                         <span x-text="result.name"></span>
                                     </a>
                                 </li>
@@ -102,7 +102,7 @@
                         </ul>
 
                         <!-- No results message -->
-                        <div x-show="searchResults.length === 0" class="text-sm text-gray-500 mt-2">
+                        <div x-show="searchResults.length === 0" class="text-sm text-text-light-muted dark:text-text-dark-muted mt-2">
                             {{ __('No results found.') }}
                         </div>
                     </div>

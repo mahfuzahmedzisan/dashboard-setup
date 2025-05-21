@@ -34,19 +34,37 @@
         <div class="navbar-start gap-3">
             <button class="flex items-start flex-col justify-start gap-[3px]"
                 @click="sidebar_expanded = !sidebar_expanded">
-                <span class="h-0.5 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ease-linear"
+                <span class="h-0.5 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"
                     :class="!sidebar_expanded ? 'w-6' : 'w-3'"></span>
-                <span class="h-0.5 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ease-linear"
+                <span class="h-0.5 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"
                     :class="!sidebar_expanded ? 'w-6' : 'w-5'"></span>
-                <span class="h-0.5 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ease-linear"
+                <span class="h-0.5 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"
                     :class="!sidebar_expanded ? 'w-6' : 'w-4'"></span>
-                <span class="h-0.5 w-6 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ease-linear"></span>
+                <span class="h-0.5 w-6 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"></span>
             </button>
-            <x-admin.search-form placeholder="Search here..."/>
+            <x-admin.search-form placeholder="Search here..." />
         </div>
 
-        {{-- <div class="navbar-end">
+        <div class="navbar-end gap-3">
             <x-admin.theme-toggle />
-        </div> --}}
+            <button>
+                <i data-lucide="bell"
+                    class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors focus:outline-none"></i>
+            </button>
+            <button>
+                <i data-lucide="message-square"
+                    class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors focus:outline-none"></i>
+            </button>
+            <button>
+                <i data-lucide="layout-grid"
+                    class="text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors focus:outline-none"></i>
+            </button>
+            <div class="avatar flex items-center justify-center gap-2">
+                <div class="w-8 rounded-full">
+                    <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+                </div>
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{admin()->name}}</span>
+            </div>
+        </div>
     </nav>
 </header>
