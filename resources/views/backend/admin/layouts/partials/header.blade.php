@@ -42,11 +42,11 @@
                     :class="!sidebar_expanded ? 'w-6' : 'w-4'"></span>
                 <span class="h-0.5 w-6 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ease-linear"></span>
             </button>
-            <x-admin.search-form />
+            <x-admin.search-form placeholder="Search here..."/>
         </div>
 
-        <div class="navbar-end">
+        {{-- <div class="navbar-end">
             <x-admin.theme-toggle />
-        </div>
+        </div> --}}
     </nav>
 </header>

@@ -73,6 +73,7 @@
     /* Background Colors */
     --color-bg-white: #ffffff;
     --color-bg-black: #000000;
+    --color-bg-active: #E2F0ED;
 
     --color-bg-dark-primary: #1A1C20;
     --color-bg-dark-secondary: #17181C;
@@ -82,13 +83,14 @@
 
     --color-bg-light-primary: #F8F8FA;
     --color-bg-light-secondary: #FDFDFD;
-    --color-bg-light-tertiary: #F7F7F7;
+    --color-bg-light-tertiary: #EEF1FF;
     --color-bg-light-muted: #BEC3C4;
     --color-bg-light-active: #E2F0ED;
 
     /* Text Color  */
     --color-text-white: #ffffff;
     --color-text-black: #000000;
+    --color-text-active: #1CA577;
 
     --color-text-dark-primary: #7A8783;
     --color-text-dark-secondary: #FDFAF6;
@@ -105,6 +107,7 @@
     /* Shadow Color  */
     --color-shadow-white: #ffffff;
     --color-shadow-black: #000000;
+    --color-shadow-active: #56ab91;
 
     --color-shadow-dark-primary: #141718;
     --color-shadow-dark-secondary: #FDFAF6;
@@ -121,22 +124,24 @@
     /* Border Color */
     --color-border-white: #ffffff;
     --color-border-black: #000000;
+    --color-border-active: #56ab91;
 
     --color-border-dark-primary: #141718;
     --color-border-dark-secondary: #FDFAF6;
-    --color-border-dark-tertiary: #F7F7F7;
+    --color-border-dark-tertiary: #364153;
     --color-border-dark-muted: #111111;
     --color-border-dark-active: #56ab91;
 
     --color-border-light-primary: #141718;
     --color-border-light-secondary: #FDFAF6;
-    --color-border-light-tertiary: #F7F7F7;
+    --color-border-light-tertiary: #d1d5dc;
     --color-border-light-muted: #111111;
     --color-border-light-active: #56ab91;
 
     /* Focus Color */
     --color-focus-white: #ffffff;
     --color-focus-black: #000000;
+    --color-focus-active: #56ab91;
 
     --color-focus-dark-primary: #141718;
     --color-focus-dark-secondary: #FDFAF6;
@@ -153,6 +158,7 @@
     /* Outline Color */
     --color-outline-white: #ffffff;
     --color-outline-black: #000000;
+    --color-outline-active: #56ab91;
 
     --color-outline-dark-primary: #141718;
     --color-outline-dark-secondary: #FDFAF6;
@@ -248,11 +254,11 @@
     }
 
     .custom-cursor {
-        @apply w-7 h-7 border-2 border-border-dark-active rounded-full pointer-events-none transition-all duration-200 ease-out;
+        @apply w-7 h-7 border-2 border-border-active rounded-full pointer-events-none transition-all duration-200 ease-out;
     }
 
     .custom-cursor.click {
-        @apply bg-bg-dark-active shadow-[0_0_15px] shadow-shadow-dark-active;
+        @apply bg-bg-active/20 shadow-[0_0_15px] shadow-shadow-active;
     }
 
     .star {
@@ -290,15 +296,11 @@
 /* input fieldset */
 /* @layer components { */
 input {
-    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-dark-active focus-within:border-border-dark-active w-full;
+    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-active focus-within:border-border-active w-full;
 }
 
 .input {
-    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-dark-active focus-within:border-border-dark-active w-full;
-}
-
-.input-search {
-    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-dark-active focus-within:border-border-dark-active w-full min-w-40 rounded-l-full;
+    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-active focus-within:border-border-active w-full;
 }
 
 /* } */

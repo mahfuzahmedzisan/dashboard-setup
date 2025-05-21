@@ -8,7 +8,7 @@
 
     <title>
         {{ isset($title) ? $title . ' - ' : '' }}
-        {{ config('app.name', 'Ecommerce') }}
+        {{ config('app.name', 'Dashboard Setup') }}
     </title>
 
     {{-- Theme selector && Theme store --}}
@@ -35,10 +35,9 @@
 
     {{-- Icons --}}
     {{-- Phosphor Icon --}}
-    <link href=" https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.min.css " rel="stylesheet">
+    {{-- <link href=" https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.min.css " rel="stylesheet"> --}}
     {{-- BoxIcons --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" />
-
 
     {{-- <script src="{{ asset('assets/frontend/js/jquery.js') }}"></script> --}}
     @vite(['resources/css/admin-dashboard.css', 'resources/js/app.js'])
