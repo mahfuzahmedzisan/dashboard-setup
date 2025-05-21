@@ -16,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View|RedirectResponse
     {
-        if (Auth::guard('web')->check()) {
+        if (Auth::guard('admin')->check()) {
             return redirect()->intended(route('admin.dashboard', absolute: false));
         }
         return view('frontend.auth.admin.login');

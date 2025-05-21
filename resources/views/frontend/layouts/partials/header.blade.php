@@ -6,10 +6,10 @@
             </div>
             <div class="navbar-end">
                 <div class="flex items-center gap-3">
-                    <x-nav-link href="{{ url('/') }}" :active="$page_slug === 'home'">
+                    <x-nav-link href="{{ url('/') }}" :active="$slug === 'home'">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link href="" :active="$page_slug === 'about'">
+                    <x-nav-link href="" :active="$slug === 'about'">
                         {{ __('About') }}
                     </x-nav-link>
                 </div>

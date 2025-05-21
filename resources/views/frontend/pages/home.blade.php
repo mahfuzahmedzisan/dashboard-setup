@@ -18,7 +18,7 @@
                 @auth('admin')
                     <a href="{{ url('/admin/dashboard') }}" class="btn btn-info">Admin Dashboard</a>
                 @else
-                    <a href="{{ url('/admin/login') }}" class="btn btn-secondary">Login</a>
+                    <a href="{{ url('/admin/login') }}" class="btn btn-secondary">Admin Login</a>
                 @endauth
             </div>
         </div>

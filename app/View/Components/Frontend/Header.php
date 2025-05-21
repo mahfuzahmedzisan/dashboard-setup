@@ -9,11 +9,11 @@ use Illuminate\View\Component;
 class Header extends Component
 {
 
-    public string $page_slug;
+    public $slug = null;
 
-    public function __construct($page_slug = 'home')
+    public function __construct($slug = 'home')
     {
-        $this->page_slug = $page_slug;
+        $this->slug = $slug;
     }
 
     /**
