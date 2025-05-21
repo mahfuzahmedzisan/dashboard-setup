@@ -29,7 +29,7 @@
 </header> --}}
 
 <header
-    class="flex items-center w-full justify-between bg-bg-light-tertiary dark:bg-bg-dark-tertiary shadow px-5 rounded-xl mt-5">
+    class="flex items-center w-full justify-between bg-bg-light-tertiary dark:bg-bg-dark-tertiary shadow px-5 rounded-xl mt-5 transition-all duration-300 ease-linear">
     <nav class="navbar min-h-auto">
         <div class="navbar-start gap-3">
             <button class="flex items-start flex-col justify-start gap-[3px]"
@@ -42,11 +42,7 @@
                     :class="!sidebar_expanded ? 'w-6' : 'w-4'"></span>
                 <span class="h-0.5 w-6 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ease-linear"></span>
             </button>
-            <a href="{{ route('admin.dashboard') }}" class="font-bold tracking-wide">{{ __('Admin Dashboard') }}</a>
-        </div>
-
-        <div class="navbar-center">
-            <x-admin.search-field />
+            <x-admin.search-form />
         </div>
 
         <div class="navbar-end">

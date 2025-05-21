@@ -10,9 +10,43 @@
 @source '*';
 /* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
 
+
+:root {
+    --primary: #1CA577;
+    --secondary: theme(colors.bg-dark-primary);
+}
+
 @layer base {
     * {
-        @apply font-poppins;
+        @apply font-poppins transition-all duration-200 ease-linear;
+    }
+
+    /* For Firefox  */
+    * {
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary) var(--secondary) !important;
+    }
+
+    /* For Webkit-based browsers (Chrome, Edge, Safari) */
+    *::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+        background-color: var(--secondary) !important;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--primary) !important;
+        border-radius: 9999px !important;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: var(--primary) !important;
+    }
+
+    *::-webkit-scrollbar-corner {
+        background: transparent;
     }
 }
 
@@ -145,7 +179,90 @@
     --shadow-sm: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     --shadow-md: rgba(99, 99, 99, 0.2) 0px 0px 10px 0px;
     --shadow-lg: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+    /* --animate-wiggle: wiggle 1s ease-in-out infinite;
+
+    @keyframes wiggle {
+
+        0%,
+        100% {
+            transform: rotate(-3deg);
+        }
+
+        50% {
+            transform: rotate(3deg);
+        }
+    } */
+
+    /* animations */
+    --animate-starFade: starFade 0.6s ease-out forwards, rise-top-left 0.6s ease-out;
+
+    @keyframes starFade {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    --animate-scalePulse: scalePulse 1s ease-in-out infinite;
+
+    @keyframes scalePulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(0.9);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    --animate-starFadeOut: starFade2 0.6s ease forwards;
+
+    @keyframes starFade2 {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+    }
+
 }
+
+@layer components {
+    .cursor-wrapper {
+        @apply fixed top-0 left-0 pointer-events-none m-0 p-0 z-[9999999999];
+        transform: translate(-100%, -100%);
+        transition: transform 150ms ease-out;
+    }
+
+    .custom-cursor {
+        @apply w-7 h-7 border-2 border-border-dark-active rounded-full pointer-events-none transition-all duration-200 ease-out;
+    }
+
+    .custom-cursor.click {
+        @apply bg-bg-dark-active shadow-[0_0_15px] shadow-shadow-dark-active;
+    }
+
+    .star {
+        @apply fixed w-1.5 h-1.5 rounded-full pointer-events-none z-[9999999999] animate-starFade;
+        background-image: radial-gradient(circle, rgba(153, 113, 3, 0.404), transparent);
+    }
+
+}
+
+
 
 @layer utilities {
     .bg-gradient-light {
@@ -167,4 +284,21 @@
     .dark .bg-gradient-theme {
         @apply bg-gradient-to-b from-gradient-dark to-gradient-black;
     }
+
 }
+
+/* input fieldset */
+/* @layer components { */
+input {
+    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-dark-active focus-within:border-border-dark-active w-full;
+}
+
+.input {
+    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-dark-active focus-within:border-border-dark-active w-full;
+}
+
+.input-search {
+    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-dark-active focus-within:border-border-dark-active w-full min-w-40 rounded-l-full;
+}
+
+/* } */

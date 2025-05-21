@@ -47,6 +47,12 @@
 </head>
 
 <body x-data="{ sidebar_expanded: true, mobile_menu_open: false }" class="bg-gradient-theme">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-wrapper">
+        <div class="custom-cursor"></div>
+    </div>
+
     <div class="flex">
         <x-admin::side-bar :active="$page_slug" />
         <div class="w-full px-4">
@@ -56,6 +62,80 @@
             </main>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const $cursorWrapper = $('.cursor-wrapper');
+            const $cursor = $('.custom-cursor');
+
+            // Initialize position off-screen
+            $cursorWrapper.css('transform', 'translate(-100%, -100%)');
+
+            // Move the cursor with the mouse
+            $(document).on('mousemove', function(e) {
+                const x = e.clientX;
+                const y = e.clientY;
+                $cursorWrapper.css('transform',
+                    `translate(${x}px, ${y}px) translate(-50%, -50%)`);
+
+
+                // Optional: Occasionally generate star
+                if (Math.random() < 0.2) {
+                    createStar(e.clientX, e.clientY);
+                }
+            });
+
+            // Click animation
+            $(document).on('mousedown', function() {
+                $cursor.addClass('click');
+            });
+            $(document).on('mouseup', function() {
+                $cursor.removeClass('click');
+            });
+
+            // Pulse on hover over links/buttons
+            $('a, button').hover(
+                function() {
+                    $cursor.addClass('animate-scalePulse');
+                },
+                function() {
+                    $cursor.removeClass('animate-scalePulse');
+                }
+            );
+
+            // Optional star effect (uncomment to enable)
+            function createStar(x, y) {
+                const $star = $('<div class="star"></div>');
+
+                // Add random colors
+                const colors = ['#FF5733', '#33FF57', '#5733FF', '#FFFF33', '#33FFFF'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                $star.css('background', `radial-gradient(circle, ${color}, transparent)`);
+
+                // Position the star
+                const offsetX = 0;
+                const offsetY = 0;
+                $star.css({
+                    position: 'absolute',
+                    left: `${x + offsetX}px`,
+                    top: `${y + offsetY}px`,
+                });
+
+                // Append to body and remove after animation
+                $('body').append($star);
+                $star.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+                    $(this).remove();
+                });
+            }
+        });
+    </script>
+
+    {{-- Lucide Icons --}}
+    <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
 </body>
 
 </html>

@@ -4,4 +4,5 @@
     <x-slot name="page_slug">admin-dashboard</x-slot>
 
     <h1 class="text-gray-900">Admin Dashboard Page</h1>
+    <div class="min-h-screen"></div>
 </x-admin::layout>
