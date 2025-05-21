@@ -68,7 +68,23 @@
         <div class="custom-cursor"></div>
     </div>
 
-    <div class="flex">
+    <div class="flex h-screen">
+        <!-- Sidebar (Sticky) -->
+        <x-admin::side-bar :active="$page_slug" />
+
+        <!-- Main Content Section -->
+        <div class="flex-1 px-3 overflow-y-auto relative">
+            <x-admin::header />
+            <main class="relative top-5 z-[1]">
+                <div class="h-screen">Content 1</div>
+                <div class="h-screen">Content 2</div>
+            </main>
+        </div>
+    </div>
+
+
+
+    {{-- <div class="flex max-w-screen">
         <x-admin::side-bar :active="$page_slug" />
         <div class="w-full px-4">
             <x-admin::header />
@@ -76,7 +92,7 @@
                 {{ $slot }}
             </main>
         </div>
-    </div>
+    </div> --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

@@ -29,7 +29,7 @@
 </header> --}}
 
 <header
-    class="flex items-center w-full justify-between bg-bg-light-tertiary dark:bg-bg-dark-tertiary shadow px-5 rounded-xl mt-5 transition-all duration-300 ease-linear">
+    class="sticky z-10 top-3 flex items-center w-full justify-between bg-bg-light-tertiary dark:bg-bg-dark-tertiary shadow px-5 rounded-xl transition-all duration-300 ease-linear">
     <nav class="navbar min-h-auto">
         <div class="navbar-start gap-3">
             <button class="flex items-start flex-col justify-start gap-[3px]"
@@ -40,7 +40,8 @@
                     :class="!sidebar_expanded ? 'w-6' : 'w-5'"></span>
                 <span class="h-0.5 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"
                     :class="!sidebar_expanded ? 'w-6' : 'w-4'"></span>
-                <span class="h-0.5 w-6 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"></span>
+                <span
+                    class="h-0.5 w-6 bg-bg-dark-muted dark:bg-bg-light-muted transition-all duration-300 ease-linear"></span>
             </button>
             <x-admin.search-form placeholder="Search here..." />
         </div>
@@ -63,7 +64,7 @@
                 <div class="w-8 rounded-full">
                     <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
                 </div>
-                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{admin()->name}}</span>
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">{{ admin()->name }}</span>
             </div>
         </div>
     </nav>
