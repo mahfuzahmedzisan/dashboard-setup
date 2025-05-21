@@ -10,7 +10,7 @@
     @endif
 
     <div class="mt-4 flex items-center justify-between">
-        <form method="POST" action="{{ route('auth.admin.verification.send') }}">
+        <form method="POST" action="{{ route('admin.verification.send') }}">
             @csrf
 
             <div>
@@ -20,7 +20,7 @@
             </div>
         </form>
 
-        <form method="POST" action="{{ route('auth.admin.logout') }}">
+        <form method="POST" action="{{ route('admin.logout') }}">
             @csrf
 
             <button type="submit"

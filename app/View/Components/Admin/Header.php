@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend\Admin;
+namespace App\View\Components\Admin;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -8,11 +8,11 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-    public $slug = null;
+    public $active;
 
-    public function __construct($slug = null)
+    public function __construct($active = null)
     {
-        $this->slug = $slug;
+        $this->active = $active;
     }
     public function render(): View|Closure|string
     {

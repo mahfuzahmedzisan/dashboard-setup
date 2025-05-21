@@ -32,21 +32,36 @@
 
     {{-- End theme selector && Theme store --}}
 
+
+    {{-- Icons --}}
+    {{-- Phosphor Icon --}}
+    <link href=" https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.min.css " rel="stylesheet">
+    {{-- BoxIcons --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" />
+
+
     <script src="{{ asset('assets/frontend/js/jquery.js') }}"></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/admin-dashboard.css', 'resources/js/app.js'])
 
     @stack('css')
 </head>
 
 <body x-data>
-    {{-- Theme Toggle --}}
-    <x-backend.admin.theme-toggle :slug="$page_slug" />
-
     {{-- Header --}}
-    <x-admin::header />
-
+    <x-admin::header :active="$page_slug" />
+    {{-- Sidebar --}}
+    <x-admin::side-bar :active="$page_slug" />
     {{ $slot }}
 
+    <i data-lucide="home"></i>
+    <i class="ph ph-house"></i>
+    <i class='bx bx-home'></i>
+
+    {{-- Lucide Icons --}}
+    <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
+    <script>
+        lucide.createIcons();
+    </script>
     @stack('js')
 </body>
 

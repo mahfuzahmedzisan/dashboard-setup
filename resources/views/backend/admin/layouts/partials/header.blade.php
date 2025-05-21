@@ -1,3 +1,6 @@
-<header>
-    Admin Dasboard Header
+<header class="bg-gray-900 text-white">
+    <nav>
+        <button></button>
+
+    </nav>
 </header>

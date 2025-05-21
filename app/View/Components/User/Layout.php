@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend\User;
+namespace App\View\Components\User;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -10,6 +10,6 @@ class Layout extends Component
 {
     public function render(): View|Closure|string
     {
-        return view('components.backend.user.layout');
+        return view('components.user.layout');
     }
 }

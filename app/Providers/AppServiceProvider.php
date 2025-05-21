@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::componentNamespace('App\\View\\Components\\Backend\\Admin', 'admin');
-        Blade::componentNamespace('App\\View\\Components\\Backend\\User', 'user');
+        Blade::componentNamespace('App\\View\\Components\\Admin', 'admin');
+        Blade::componentNamespace('App\\View\\Components\\User', 'user');
         Blade::componentNamespace('App\\View\\Components\\Frontend', 'frontend');
     }
 }
