@@ -41,7 +41,7 @@
 <body x-data>
 
     {{-- Header --}}
-    <x-frontend::header :page="$page" />
+    <x-frontend::header :page="$page_slug" />
 
     <x-frontend.theme-toggle />
 

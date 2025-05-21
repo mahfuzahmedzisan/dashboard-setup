@@ -1,7 +1,7 @@
 <x-frontend::layout>
 
     <x-slot name="title">Home</x-slot>
-    <x-slot name="page">home</x-slot>
+    <x-slot name="page_slug">home</x-slot>
 
     <div class="text-[#1b1b18] dark:text-[#FDFDFC] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Frontend;
+namespace App\View\Components\Backend\Admin;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -8,12 +8,12 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-
-    public string $page_slug;
-
-    public function __construct($page_slug = 'home')
+    /**
+     * Create a new component instance.
+     */
+    public function __construct()
     {
-        $this->page_slug = $page_slug;
+        //
     }
 
     /**
@@ -21,6 +21,6 @@ class Header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('frontend.layouts.partials.header');
+        return view('components.backend.admin.header');
     }
 }
