@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @import 'tailwindcss';
 @plugin "daisyui";
 
@@ -8,7 +10,161 @@
 @source '*';
 /* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
 
+@layer base {
+    * {
+        @apply font-poppins;
+    }
+}
+
+/* Toggle Theme mode */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
-    /* Colors */
-    --color-dark: blue;
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1440px;
+    --breakpoint-3xl: 1600px;
+    --breakpoint-4xl: 1920px;
+    --breakpoint-5xl: 2560px;
+
+    /* Font Family */
+    --font-poppins: 'Poppins', sans-serif;
+    --font-rubik: 'Rubik', sans-serif;
+
+    /* ===================================  Colors =================================== */
+
+    /* Background Colors */
+    --color-bg-white: #ffffff;
+    --color-bg-black: #000000;
+
+    --color-bg-dark-primary: #1A1C20;
+    --color-bg-dark-secondary: #17181C;
+    --color-bg-dark-tertiary: #26292F;
+    --color-bg-dark-muted: #7D8184;
+    --color-bg-dark-active: #E2F0ED;
+
+    --color-bg-light-primary: #F8F8FA;
+    --color-bg-light-secondary: #FDFDFD;
+    --color-bg-light-tertiary: #F7F7F7;
+    --color-bg-light-muted: #BEC3C4;
+    --color-bg-light-active: #E2F0ED;
+
+    /* Text Color  */
+    --color-text-white: #ffffff;
+    --color-text-black: #000000;
+
+    --color-text-dark-primary: #7A8783;
+    --color-text-dark-secondary: #FDFAF6;
+    --color-text-dark-tertiary: #F7F7F7;
+    --color-text-dark-muted: #BEC3C4;
+    --color-text-dark-active: #1CA577;
+
+    --color-text-light-primary: #7A8783;
+    --color-text-light-secondary: #FDFAF6;
+    --color-text-light-tertiary: #F7F7F7;
+    --color-text-light-muted: #BEC3C4;
+    --color-text-light-active: #1CA577;
+
+    /* Shadow Color  */
+    --color-shadow-white: #ffffff;
+    --color-shadow-black: #000000;
+
+    --color-shadow-dark-primary: #141718;
+    --color-shadow-dark-secondary: #FDFAF6;
+    --color-shadow-dark-tertiary: #F7F7F7;
+    --color-shadow-dark-muted: #111111;
+    --color-shadow-dark-active: #56ab91;
+
+    --color-shadow-light-primary: #141718;
+    --color-shadow-light-secondary: #FDFAF6;
+    --color-shadow-light-tertiary: #F7F7F7;
+    --color-shadow-light-muted: #111111;
+    --color-shadow-light-active: #56ab91;
+
+    /* Border Color */
+    --color-border-white: #ffffff;
+    --color-border-black: #000000;
+
+    --color-border-dark-primary: #141718;
+    --color-border-dark-secondary: #FDFAF6;
+    --color-border-dark-tertiary: #F7F7F7;
+    --color-border-dark-muted: #111111;
+    --color-border-dark-active: #56ab91;
+
+    --color-border-light-primary: #141718;
+    --color-border-light-secondary: #FDFAF6;
+    --color-border-light-tertiary: #F7F7F7;
+    --color-border-light-muted: #111111;
+    --color-border-light-active: #56ab91;
+
+    /* Focus Color */
+    --color-focus-white: #ffffff;
+    --color-focus-black: #000000;
+
+    --color-focus-dark-primary: #141718;
+    --color-focus-dark-secondary: #FDFAF6;
+    --color-focus-dark-tertiary: #F7F7F7;
+    --color-focus-dark-muted: #111111;
+    --color-focus-dark-active: #56ab91;
+
+    --color-focus-light-primary: #141718;
+    --color-focus-light-secondary: #FDFAF6;
+    --color-focus-light-tertiary: #F7F7F7;
+    --color-focus-light-muted: #111111;
+    --color-focus-light-active: #56ab91;
+
+    /* Outline Color */
+    --color-outline-white: #ffffff;
+    --color-outline-black: #000000;
+
+    --color-outline-dark-primary: #141718;
+    --color-outline-dark-secondary: #FDFAF6;
+    --color-outline-dark-tertiary: #F7F7F7;
+    --color-outline-dark-muted: #111111;
+    --color-outline-dark-active: #56ab91;
+
+    --color-outline-light-primary: #141718;
+    --color-outline-light-secondary: #FDFAF6;
+    --color-outline-light-tertiary: #F7F7F7;
+    --color-outline-light-muted: #111111;
+    --color-outline-light-active: #56ab91;
+
+    /* Grandient Colors */
+    --color-gradient-light: #ECE9E6;
+    --color-gradient-white: #FFFFFF;
+    --color-gradient-dark: #141718;
+    --color-gradient-black: #000000;
+
+    /* =================================== End of Colors =================================== */
+
+
+    /* Shadow */
+    --shadow-sm: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    --shadow-md: rgba(99, 99, 99, 0.2) 0px 0px 10px 0px;
+    --shadow-lg: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@layer utilities {
+    .bg-gradient-light {
+        @apply bg-gradient-to-b from-gradient-white to-gradient-light dark:bg-none;
+    }
+
+    .bg-gradient-dark {
+        @apply bg-none;
+    }
+
+    .dark .bg-gradient-dark {
+        @apply bg-gradient-to-b from-gradient-dark to-gradient-black;
+    }
+
+    .bg-gradient-theme {
+        @apply bg-gradient-to-b from-gradient-white to-gradient-light;
+    }
+
+    .dark .bg-gradient-theme {
+        @apply bg-gradient-to-b from-gradient-dark to-gradient-black;
+    }
 }

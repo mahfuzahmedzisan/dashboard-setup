@@ -19,6 +19,9 @@
   }
 }
 
+/* Toggle Theme mode */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --breakpoint-xs: 480px;
   --breakpoint-sm: 640px;
@@ -35,6 +38,7 @@
   padding-inline: 10px;
   margin-inline: auto;
   @apply max-w-screen-2xl;
+
   @variants sm, md, lg, xl, 2xl {
     max-width: 100%;
   }

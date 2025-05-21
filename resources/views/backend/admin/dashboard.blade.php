@@ -3,5 +3,5 @@
     <x-slot name="title">Admin Dashboard</x-slot>
     <x-slot name="page_slug">admin-dashboard</x-slot>
 
-    <h1>Admin Dashboard</h1>
+    <h1 class="text-gray-900">Admin Dashboard Page</h1>
 </x-admin::layout>

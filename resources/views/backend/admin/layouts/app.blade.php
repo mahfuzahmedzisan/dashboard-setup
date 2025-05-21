@@ -40,29 +40,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" />
 
 
-    <script src="{{ asset('assets/frontend/js/jquery.js') }}"></script>
-    @vite(['resources/css/app.css', 'resources/css/admin-dashboard.css', 'resources/js/app.js'])
+    {{-- <script src="{{ asset('assets/frontend/js/jquery.js') }}"></script> --}}
+    @vite(['resources/css/admin-dashboard.css', 'resources/js/app.js'])
 
     @stack('css')
 </head>
 
-<body x-data>
-    {{-- Header --}}
-    <x-admin::header :active="$page_slug" />
-    {{-- Sidebar --}}
-    <x-admin::side-bar :active="$page_slug" />
-    {{ $slot }}
-
-    <i data-lucide="home"></i>
-    <i class="ph ph-house"></i>
-    <i class='bx bx-home'></i>
-
-    {{-- Lucide Icons --}}
-    <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
-    <script>
-        lucide.createIcons();
-    </script>
-    @stack('js')
+<body x-data="{ sidebar_expanded: true, mobile_menu_open: false }" class="bg-gradient-theme">
+    <div class="flex">
+        <x-admin::side-bar :active="$page_slug" />
+        <div class="w-full px-4">
+            <x-admin::header />
+            <main class="flex-1 p-4">
+                {{ $slot }}
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>
