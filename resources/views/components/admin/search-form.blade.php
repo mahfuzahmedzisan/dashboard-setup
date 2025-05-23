@@ -29,21 +29,21 @@
             }
         }
     }" x-init="init()"
-        x-on:click.away="mobile && (searchbar_show = false)">
+        x-on:click.away="tablet && (searchbar_show = false)">
         <div class="relative w-full">
             <!-- Search bar with smooth transitions -->
-            <div class="join !w-full" x-show="!mobile || searchbar_show"
+            <div class="join !w-full" x-show="!tablet || searchbar_show"
                 x-transition:enter="transition-opacity ease-out duration-300" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-in duration-200"
                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                 :class="{
-                    'absolute top-0 left-0 w-full max-w-full': mobile,
+                    'absolute top-0 left-0 w-full max-w-full': tablet,
                 }">
                 <input x-ref="search" x-model="value" @input="fetchData()"
                     class="input input-search join-item focus:outline-0 pl-6 border-border-light-tertiary dark:border-border-dark-tertiary focus-within:outline-0 w-full focus:ring-0 focus:border-border-active focus-within:border-border-active rounded-l-full transition-all duration-200 ease-linear bg-bg-light-primary dark:bg-bg-dark-primary"
                     :class="{
-                        'min-w-40 xs:min-w-full xs:max-w-full': mobile,
-                        'max-w-full': !mobile,
+                        'min-w-40 xs:min-w-full xs:max-w-full': tablet,
+                        'max-w-full': !tablet,
                     }"
                     placeholder="{{ $placeholder }}" @focus="focus = true" @blur="focus = false" />
 
@@ -55,8 +55,8 @@
                 </button>
             </div>
 
-            <!-- Toggle button to show/hide search bar on mobile -->
-            <button type="button" @click="searchbar_show = !searchbar_show" x-show="mobile"
+            <!-- Toggle button to show/hide search bar on tablet -->
+            <button type="button" @click="searchbar_show = !searchbar_show" x-show="tablet"
                 class="btn rounded-full border-border-light-tertiary dark:border-border-dark-tertiary bg-bg-light-primary dark:bg-bg-dark-primary hover:bg-bg-light-secondary dark:hover:bg-bg-dark-secondary focus:outline-none group"
                 :class="{
                     '!border-border-active bg-bg-light-secondary dark:bg-bg-dark-secondary': focus,
@@ -76,8 +76,8 @@
                 x-transition:leave-start="opacity-100 transform translate-y-0"
                 x-transition:leave-end="opacity-0 transform translate-y-3"
                 :class="{
-                    '-left-10 sm:left-0 min-w-60 xs:min-w-96 max-w-full': mobile,
-                    'left-0': !mobile,
+                    '-left-10 sm:left-0 min-w-60 xs:min-w-96 max-w-full': tablet,
+                    'left-0': !tablet,
                 }">
                 <div class="text-center relative h-fit min-h-24 max-h-56 overflow-auto">
                     <div class="sticky top-0 z-20 bg-bg-light-tertiary dark:bg-bg-dark-tertiary">

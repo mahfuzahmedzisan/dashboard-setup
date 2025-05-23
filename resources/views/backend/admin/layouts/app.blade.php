@@ -49,26 +49,154 @@
     sidebar_expanded: true,
     mobile_menu_open: false,
     mobile: false,
+    tablet: false,
     init() {
-        // Check the initial width and update `mobile` state
-        this.updateMobileState();
-
-        // Listen to window resize events
+        this.updateScreenStates();
         window.addEventListener('resize', () => {
-            this.updateMobileState();
+            this.updateScreenStates();
         });
     },
-    updateMobileState() {
+    updateScreenStates() {
         this.mobile = window.innerWidth <= 768;
+        this.tablet = window.innerWidth <= 1024;
+        {{-- this.sidebar_expanded = this.tablet; // Automatically expand sidebar on tablet
+        // Optionally, close sidebar on table by default:
+        if (this.table) {
+            this.mobile_menu_open = false;
+        } --}}
     },
 }" class="bg-gradient-theme">
 
     <!-- Custom Cursor -->
-    <div class="cursor-wrapper">
+    <div class="cursor-wrapper hidden lg:block">
         <div class="custom-cursor"></div>
     </div>
 
     <div class="flex h-screen">
+        <aside class="bg-red-500/50 w-fit z-10 h-full transition-all duration-200"
+            :class="{
+                // 'w-16': !mobile_menu_open && !tablet,
+                '!max-w-64': mobile_menu_open && !tablet,
+                '-translate-x-0 !absolute top-0 left-0': mobile_menu_open && tablet,
+                '-translate-x-full !absolute top-0 left-0': !mobile_menu_open && tablet,
+                '!w-80': sidebar_expanded && tablet,
+                // '!w-64': sidebar_expanded && !tablet,
+            }">
+            {{-- :class="[
+                (mobile_menu_open && tablet) ? 'absolute top-0 left-0 translate-x-full' : '',
+                (mobile_menu_open) ? 'absolute top-0 left-0 translate-x-0' : '',
+            
+            ]" --}}
+
+            <div class="flex items-center justify-start gap-3">
+                <i data-lucide="home"></i>
+                <span class="font-semibold" x-show="sidebar_expanded" style="display: inline-block;">Home</span>
+
+            </div>
+
+        </aside>
+        <div class="w-full max-h-screen overflow-y-auto relative">
+            <header class="bg-blue-500 sticky w-full top-0 left-0">
+                <div class="flex items-center justify-end">
+
+                    <p x-show="sidebar_expanded">expanded</p>
+                    <p x-show="mobile">Mobile</p>
+                    <p x-show="tablet">Tablet</p>
+                    <button class="btn btn-primary" @click="mobile_menu_open = !mobile_menu_open; sidebar_expanded = !sidebar_expanded">menu
+                        bar</button>
+
+                </div>
+            </header>
+            <main class="bg-purple-500 p-5 mt-5">
+                <div class="bg-yellow-500 my-5">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim minima dolorum odit quibusdam placeat
+                    harum amet, molestias illum provident ea exercitationem earum voluptatibus eligendi numquam delectus
+                    alias laboriosam ut vel animi, eaque voluptatum iusto! Ut dignissimos praesentium dolorum quidem
+                    sequi eum! In natus illo nostrum. Quas labore, ut consequatur aliquam eaque sint laborum adipisci
+                    maiores mollitia dolore. Iure earum doloribus excepturi necessitatibus aperiam ullam nemo, dolores
+                    vel quisquam facere assumenda magnam, cupiditate, dignissimos esse iste doloremque unde delectus rem
+                    voluptatem. Dolorum eius omnis ut voluptas consectetur sunt maxime ducimus qui enim sapiente culpa
+                    libero, illo facilis nobis aperiam! Suscipit natus minus expedita perferendis labore, nisi placeat
+                    corporis aut. Tempora voluptate aliquid autem fuga officia beatae asperiores cumque molestiae iste
+                    ab! Esse architecto consequatur aperiam provident repudiandae numquam dolor, quod fugiat. Dolore,
+                    aut velit architecto nisi consequuntur delectus autem cupiditate illo aliquid sint, exercitationem
+                    corrupti, fugit beatae suscipit quisquam adipisci! Esse incidunt ad laboriosam magni obcaecati, quam
+                    nihil impedit dicta? Ut nam exercitationem est quidem. Debitis pariatur quidem ullam delectus sunt
+                    modi magni obcaecati temporibus velit in nemo aliquid distinctio autem veritatis, facilis alias
+                    nobis assumenda, ut eius eos dolorum tenetur maxime omnis! Atque eum odit incidunt blanditiis,
+                    dolorum nostrum sapiente optio impedit ipsa, natus nobis? Corporis consectetur est, tenetur esse
+                    voluptates ea aspernatur dignissimos magnam iusto cupiditate blanditiis vel asperiores fugiat totam
+                    debitis obcaecati quam libero ratione sint quia repellendus! Asperiores vero molestias aut saepe
+                    beatae obcaecati, distinctio excepturi, sapiente temporibus corporis, quisquam modi. Tempore
+                    architecto, aut, qui eligendi provident vitae similique quaerat aliquam quibusdam distinctio eum
+                    asperiores animi explicabo laborum ipsum, dicta ut ea mollitia amet officiis! Assumenda, quaerat
+                    blanditiis! Animi atque, aliquid architecto harum consectetur commodi voluptate inventore
+                    repudiandae. Natus rerum veniam perspiciatis earum reprehenderit pariatur, itaque, voluptatibus
+                    exercitationem sed beatae laudantium blanditiis consequuntur numquam? Autem at excepturi quo quae
+                    minima officia nam sunt! Non iure, consequatur commodi dolores architecto amet ipsum odio vitae
+                    sapiente quasi, qui consectetur quod quas nihil mollitia repellendus. Consequatur iste iusto,
+                    accusamus voluptatum facilis ipsam minus veritatis incidunt dolores? Eum exercitationem, incidunt
+                    commodi laborum, quaerat iure at ullam explicabo animi culpa, debitis maxime? Harum consequuntur
+                    magni corrupti inventore atque nostrum illo aliquam eligendi tempore, quod exercitationem, debitis
+                    excepturi quam, voluptate veritatis voluptates culpa. Illum voluptas provident quod voluptatibus
+                    nisi quis asperiores ducimus reiciendis accusantium. Incidunt enim reiciendis ipsum? Et quibusdam
+                    saepe, est, possimus debitis dignissimos eos, cupiditate sed labore voluptates sint vel expedita
+                    corrupti inventore velit animi ullam harum recusandae non sit iste maiores? Eaque veritatis animi
+                    ipsam a hic. Dolor aspernatur perferendis repellendus nostrum labore explicabo dolore quo amet esse?
+                    Odit odio, excepturi perspiciatis quaerat distinctio quae ullam commodi sit error debitis suscipit
+                    quos eius magnam, quisquam sed dicta qui magni laborum architecto consequuntur? Ratione eveniet
+                    nihil amet eius sequi adipisci molestiae hic, atque, tempore totam accusantium iure at, suscipit
+                    quibusdam porro in ipsa? Porro odio quibusdam hic eum tenetur dolorum reiciendis libero nesciunt
+                    modi. Fugiat iusto voluptatum nihil, voluptas error earum placeat dolorum, nam enim delectus,
+                    adipisci voluptatibus consectetur! Voluptatem, autem!
+                </div>
+                <div class="bg-yellow-500 my-5">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim minima dolorum odit quibusdam placeat
+                    harum amet, molestias illum provident ea exercitationem earum voluptatibus eligendi numquam delectus
+                    alias laboriosam ut vel animi, eaque voluptatum iusto! Ut dignissimos praesentium dolorum quidem
+                    sequi eum! In natus illo nostrum. Quas labore, ut consequatur aliquam eaque sint laborum adipisci
+                    maiores mollitia dolore. Iure earum doloribus excepturi necessitatibus aperiam ullam nemo, dolores
+                    vel quisquam facere assumenda magnam, cupiditate, dignissimos esse iste doloremque unde delectus rem
+                    voluptatem. Dolorum eius omnis ut voluptas consectetur sunt maxime ducimus qui enim sapiente culpa
+                    libero, illo facilis nobis aperiam! Suscipit natus minus expedita perferendis labore, nisi placeat
+                    corporis aut. Tempora voluptate aliquid autem fuga officia beatae asperiores cumque molestiae iste
+                    ab! Esse architecto consequatur aperiam provident repudiandae numquam dolor, quod fugiat. Dolore,
+                    aut velit architecto nisi consequuntur delectus autem cupiditate illo aliquid sint, exercitationem
+                    corrupti, fugit beatae suscipit quisquam adipisci! Esse incidunt ad laboriosam magni obcaecati, quam
+                    nihil impedit dicta? Ut nam exercitationem est quidem. Debitis pariatur quidem ullam delectus sunt
+                    modi magni obcaecati temporibus velit in nemo aliquid distinctio autem veritatis, facilis alias
+                    nobis assumenda, ut eius eos dolorum tenetur maxime omnis! Atque eum odit incidunt blanditiis,
+                    dolorum nostrum sapiente optio impedit ipsa, natus nobis? Corporis consectetur est, tenetur esse
+                    voluptates ea aspernatur dignissimos magnam iusto cupiditate blanditiis vel asperiores fugiat totam
+                    debitis obcaecati quam libero ratione sint quia repellendus! Asperiores vero molestias aut saepe
+                    beatae obcaecati, distinctio excepturi, sapiente temporibus corporis, quisquam modi. Tempore
+                    architecto, aut, qui eligendi provident vitae similique quaerat aliquam quibusdam distinctio eum
+                    asperiores animi explicabo laborum ipsum, dicta ut ea mollitia amet officiis! Assumenda, quaerat
+                    blanditiis! Animi atque, aliquid architecto harum consectetur commodi voluptate inventore
+                    repudiandae. Natus rerum veniam perspiciatis earum reprehenderit pariatur, itaque, voluptatibus
+                    exercitationem sed beatae laudantium blanditiis consequuntur numquam? Autem at excepturi quo quae
+                    minima officia nam sunt! Non iure, consequatur commodi dolores architecto amet ipsum odio vitae
+                    sapiente quasi, qui consectetur quod quas nihil mollitia repellendus. Consequatur iste iusto,
+                    accusamus voluptatum facilis ipsam minus veritatis incidunt dolores? Eum exercitationem, incidunt
+                    commodi laborum, quaerat iure at ullam explicabo animi culpa, debitis maxime? Harum consequuntur
+                    magni corrupti inventore atque nostrum illo aliquam eligendi tempore, quod exercitationem, debitis
+                    excepturi quam, voluptate veritatis voluptates culpa. Illum voluptas provident quod voluptatibus
+                    nisi quis asperiores ducimus reiciendis accusantium. Incidunt enim reiciendis ipsum? Et quibusdam
+                    saepe, est, possimus debitis dignissimos eos, cupiditate sed labore voluptates sint vel expedita
+                    corrupti inventore velit animi ullam harum recusandae non sit iste maiores? Eaque veritatis animi
+                    ipsam a hic. Dolor aspernatur perferendis repellendus nostrum labore explicabo dolore quo amet esse?
+                    Odit odio, excepturi perspiciatis quaerat distinctio quae ullam commodi sit error debitis suscipit
+                    quos eius magnam, quisquam sed dicta qui magni laborum architecto consequuntur? Ratione eveniet
+                    nihil amet eius sequi adipisci molestiae hic, atque, tempore totam accusantium iure at, suscipit
+                    quibusdam porro in ipsa? Porro odio quibusdam hic eum tenetur dolorum reiciendis libero nesciunt
+                    modi. Fugiat iusto voluptatum nihil, voluptas error earum placeat dolorum, nam enim delectus,
+                    adipisci voluptatibus consectetur! Voluptatem, autem!
+                </div>
+            </main>
+        </div>
+    </div>
+
+    {{-- <div class="flex h-screen">
         <!-- Sidebar (Sticky) -->
         <x-admin::side-bar :active="$page_slug" />
 
@@ -80,7 +208,7 @@
                 <div class="h-screen">Content 2</div>
             </main>
         </div>
-    </div>
+    </div> --}}
 
 
 
