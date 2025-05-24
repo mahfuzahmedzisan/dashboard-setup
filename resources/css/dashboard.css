@@ -16,43 +16,6 @@
     --secondary: theme(colors.bg-light-primary);
 }
 
-@layer base {
-    * {
-        @apply font-poppins transition-all duration-200 ease-linear;
-    }
-
-    /* For Firefox  */
-    * {
-        scroll-behavior: smooth;
-        scrollbar-width: thin;
-        scrollbar-color: var(--primary) var(--secondary) !important;
-    }
-
-    /* For Webkit-based browsers (Chrome, Edge, Safari) */
-    *::-webkit-scrollbar {
-        height: 8px;
-        width: 8px;
-        background-color: var(--secondary) !important;
-    }
-    .dark *::-webkit-scrollbar {
-        background-color: var(--secondary) !important;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background-color: var(--primary) !important;
-        border-radius: 9999px !important;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
-    }
-
-    *::-webkit-scrollbar-thumb:hover {
-        background-color: var(--primary) !important;
-    }
-
-    *::-webkit-scrollbar-corner {
-        background: transparent;
-    }
-}
-
 /* Toggle Theme mode */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -249,61 +212,157 @@
 
 }
 
-@layer components {
-    .cursor-wrapper {
-        @apply fixed top-0 left-0 pointer-events-none m-0 p-0 z-[9999999999];
-        transform: translate(-100%, -100%);
-        transition: transform 150ms ease-out;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-    .custom-cursor {
-        @apply w-7 h-7 border-2 border-border-active rounded-full pointer-events-none transition-all duration-200 ease-out;
+@layer base {
+    body {
+        @apply font-["Inter"];
     }
-
-    .custom-cursor.click {
-        @apply bg-bg-active/20 shadow-[0_0_15px] shadow-shadow-active;
-    }
-
-    .star {
-        @apply fixed w-1.5 h-1.5 rounded-full pointer-events-none z-[9999999999] animate-starFade;
-        background-image: radial-gradient(circle, rgba(153, 113, 3, 0.404), transparent);
-    }
-
 }
 
-
-
 @layer utilities {
-    .bg-gradient-light {
-        @apply bg-gradient-to-b from-gradient-white to-gradient-light dark:bg-none;
+    .bg-gradient-primary {
+        @apply bg-gradient-to-br from-indigo-400 to-purple-600;
     }
 
     .bg-gradient-dark {
-        @apply bg-none;
+        @apply bg-gradient-to-br from-slate-800 to-slate-700;
     }
 
-    .dark .bg-gradient-dark {
-        @apply bg-gradient-to-b from-gradient-dark to-gradient-black;
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
     }
 
-    .bg-gradient-theme {
-        @apply bg-gradient-to-b from-gradient-white to-gradient-light;
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-white/10 rounded;
     }
 
-    .dark .bg-gradient-theme {
-        @apply bg-gradient-to-b from-gradient-dark to-gradient-black;
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-white/30 rounded;
     }
 
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-white/50;
+    }
+
+    .sidebar-item {
+        @apply relative overflow-hidden;
+    }
+
+    .sidebar-item::before {
+        content: '';
+        @apply absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-blue-500 to-purple-500 scale-y-0 transition-transform duration-200 ease-in;
+    }
+
+    .sidebar-item:hover::before,
+    .sidebar-item.active::before {
+        @apply scale-y-100;
+    }
+
+    .glass {
+        @apply bg-white/10 backdrop-blur border border-white/20;
+    }
+
+    .glass-dark {
+        @apply bg-black/20 backdrop-blur border border-white/10;
+    }
+
+    .animated-bg {
+        @apply bg-[linear-gradient(-45deg, _#667eea, _#764ba2, _#f093fb, _#f5576c)] bg-[length:400%_400%] animate-[gradientBG_15s_ease_infinite];
+    }
+
+    @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .float {
+        @apply animate-[float_6s_ease-in-out_infinite];
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .pulse-slow {
+        @apply animate-[pulse_4s_cubic-bezier(0.4, _0, _0.6, _1)_infinite];
+    }
+
+    .notification-badge {
+        @apply animate-bounce;
+    }
+
+    .btn-modern {
+        @apply bg-gradient-to-br from-blue-500 to-purple-500 transition-all duration-300 relative overflow-hidden;
+    }
+
+    .btn-modern::before {
+        content: '';
+        @apply absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-left duration-500;
+    }
+
+    .btn-modern:hover::before {
+        @apply left-full;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300;
+    }
+
+    .card-hover:hover {
+        @apply -translate-y-1.5 shadow-2xl;
+    }
+
+    .progress-bar {
+        @apply animate-[progressLoad_2s_ease-out];
+    }
+
+    @keyframes progressLoad {
+        0% {
+            width: 0%;
+        }
+    }
+
+    .shimmer {
+        @apply bg-[linear-gradient(90deg, _transparent, _rgba(255, _255, _255, _0.1), _transparent)] bg-[length:200%_100%] animate-[shimmer_2s_infinite];
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    .interactive-card {
+        @apply cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4, _0, _0.2, _1)];
+    }
+
+    .interactive-card:hover {
+        @apply scale-105;
+    }
+
+    .interactive-card:active {
+        @apply scale-95;
+    }
 }
-
-/* input fieldset */
-/* @layer components { */
-input {
-    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-active focus-within:border-border-active w-full;
-}
-
-.input {
-    @apply focus:outline-0 focus-within:outline-0 focus:ring-0 focus:border-border-active focus-within:border-border-active w-full;
-}
-
-/* } */
