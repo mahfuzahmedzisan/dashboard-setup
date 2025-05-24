@@ -105,7 +105,8 @@
 
         /* Animated background */
         .animated-bg {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            /* background-image: linear-gradient( -45deg, #fcfaf0 0%, #ead8eb8f 46.4%, #e3edf8 100.7%); */
+            background-image: linear-gradient( -45deg, #212B34 0%, #252138 46.4%, #0F0E38 100.7%);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
         }
@@ -516,8 +517,7 @@
                         </div>
 
                         <!-- Theme Toggle -->
-                        <button @click="toggleTheme()"
-                            class="p-2 rounded-xl hover:bg-white/10 transition-colors "
+                        <button @click="toggleTheme()" class="p-2 rounded-xl hover:bg-white/10 transition-colors "
                             data-tooltip="Toggle theme">
                             <i data-lucide="sun" x-show="!darkMode" class="w-5 h-5 text-white"></i>
                             <i data-lucide="moon" x-show="darkMode" class="w-5 h-5 text-white"></i>
