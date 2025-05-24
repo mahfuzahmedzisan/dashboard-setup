@@ -21,7 +21,7 @@
                     x-transition:leave="transition-all duration-200"
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4">
-                    <h1 class="text-xl font-bold text-white">ModernUI</h1>
+                    <h1 class="text-xl font-bold text-white">Dashboard</h1>
                     <p class="text-white/60 text-sm">Dashboard Pro</p>
                 </div>
             </div>

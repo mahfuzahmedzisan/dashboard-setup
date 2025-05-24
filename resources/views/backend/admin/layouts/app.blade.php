@@ -35,12 +35,12 @@
     </script>
     <script src="{{ asset('assets/js/theme-toggle.js') }}"></script>
     
-    @vite(['resources/css/admin-dashboard.css', 'resources/js/app.js'])
+    @vite(['resources/css/dashboard.css', 'resources/js/app.js'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
 </head>
 
-<body x-data="dashboardData()" class="bg-red-500 dark:bg-teal-900 min-h-screen">
+<body x-data="dashboardData()" class="animated-bg min-h-screen">
 
     <!-- Mobile/Tablet Overlay -->
     <div x-show="mobile_menu_open && !desktop" x-transition:enter="transition-all duration-300 ease-out"
