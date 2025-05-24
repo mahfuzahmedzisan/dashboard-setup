@@ -8,11 +8,11 @@
         'w-72 -translate-x-full': !desktop && !mobile_menu_open,
     }">
 
-    <div class="glass h-full shadow-2xl border-r border-white/20 custom-scrollbar overflow-y-auto">
+    <div class="glass-card h-full shadow-2xl border-r border-white/20 custom-scrollbar overflow-y-auto">
         <!-- Sidebar Header -->
         <div class="p-6 border-b border-white/10">
             <div class="flex items-center gap-4">
-                <div class="w-10 h-10 btn-modern rounded-xl flex items-center justify-center shadow-lg">
+                <div class="w-10 h-10 btn-primary rounded-xl flex items-center justify-center shadow-lg">
                     <i data-lucide="zap" class="w-6 h-6 text-white"></i>
                 </div>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
@@ -178,7 +178,7 @@
         </nav>
 
         <!-- User Profile - Bottom -->
-        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 glass">
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 glass-card">
             <div class="flex items-center gap-3">
                 <div class="relative">
                     <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face&auto=format"

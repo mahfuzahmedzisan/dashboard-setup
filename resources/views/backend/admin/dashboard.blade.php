@@ -12,7 +12,7 @@
             x-transition:enter="transition-all duration-500" x-transition:enter-start="opacity-0 translate-y-8"
             x-transition:enter-end="opacity-100 translate-y-0">
 
-            <div class="glass rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0s;"
+            <div class="glass-card rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0s;"
                 @click="showDetails('users')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="glass rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0.2s;"
+            <div class="glass-card rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0.2s;"
                 @click="showDetails('revenue')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="glass rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0.4s;"
+            <div class="glass-card rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0.4s;"
                 @click="showDetails('orders')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="glass rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0.6s;"
+            <div class="glass-card rounded-2xl p-6 card-hover float interactive-card" style="animation-delay: 0.6s;"
                 @click="showDetails('active')">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center">
@@ -98,7 +98,7 @@
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
 
             <!-- Main Chart -->
-            <div class="lg:col-span-2 glass rounded-2xl p-6 card-hover">
+            <div class="lg:col-span-2 glass-card rounded-2xl p-6 card-hover">
                 <div class="flex items-center justify-between mb-6">
                     <div>
                         <h3 class="text-xl font-bold text-white mb-1">Revenue Analytics</h3>
@@ -111,7 +111,7 @@
                             <option value="weekly">Weekly</option>
                             <option value="daily">Daily</option>
                         </select>
-                        <button class="btn-modern text-white text-sm px-4 py-2 rounded-xl flex items-center gap-2">
+                        <button class="btn-primary text-white text-sm px-4 py-2 rounded-xl flex items-center gap-2">
                             <i data-lucide="download" class="w-4 h-4"></i>
                             Export
                         </button>
@@ -125,7 +125,7 @@
             <!-- Quick Stats -->
             <div class="space-y-6">
                 <!-- Recent Activity -->
-                <div class="glass rounded-2xl p-6">
+                <div class="glass-card rounded-2xl p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-lg font-bold text-white">Recent Activity</h3>
                         <button class="text-white/60 hover:text-white transition-colors">
@@ -149,11 +149,11 @@
                 </div>
 
                 <!-- Quick Actions -->
-                <div class="glass rounded-2xl p-6">
+                <div class="glass-card rounded-2xl p-6">
                     <h3 class="text-lg font-bold text-white mb-4">Quick Actions</h3>
                     <div class="grid grid-cols-2 gap-3">
                         <button
-                            class="btn-modern p-3 rounded-xl text-white text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                            class="btn-primary p-3 rounded-xl text-white text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
                             <i data-lucide="plus" class="w-4 h-4"></i>
                             Add User
                         </button>
@@ -182,7 +182,7 @@
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
             class="space-y-6">
 
-            <div class="glass rounded-2xl p-6">
+            <div class="glass-card rounded-2xl p-6">
                 <h2 class="text-2xl font-bold text-white mb-6">Analytics Dashboard</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors">
@@ -244,10 +244,10 @@
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
             class="space-y-6">
 
-            <div class="glass rounded-2xl p-6">
+            <div class="glass-card rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-6">
                     <h2 class="text-2xl font-bold text-white">User Management</h2>
-                    <button class="btn-modern px-4 py-2 rounded-xl text-white flex items-center gap-2">
+                    <button class="btn-primary px-4 py-2 rounded-xl text-white flex items-center gap-2">
                         <i data-lucide="user-plus" class="w-4 h-4"></i>
                         Add User
                     </button>
@@ -317,10 +317,10 @@
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
             class="space-y-6">
 
-            <div class="glass rounded-2xl p-6">
+            <div class="glass-card rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-6">
                     <h2 class="text-2xl font-bold text-white">Projects</h2>
-                    <button class="btn-modern px-4 py-2 rounded-xl text-white flex items-center gap-2">
+                    <button class="btn-primary px-4 py-2 rounded-xl text-white flex items-center gap-2">
                         <i data-lucide="folder-plus" class="w-4 h-4"></i>
                         New Project
                     </button>
@@ -370,7 +370,7 @@
             x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
             class="space-y-6">
 
-            <div class="glass rounded-2xl p-6">
+            <div class="glass-card rounded-2xl p-6">
                 <h2 class="text-2xl font-bold text-white mb-6">Messages</h2>
                 <div class="space-y-4">
                     <template x-for="message in messages" :key="message.id">

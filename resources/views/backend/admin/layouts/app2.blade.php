@@ -92,14 +92,14 @@
             transform: scaleY(1);
         }
 
-        /* Glass morphism effect */
-        .glass {
+        /* glass-card morphism effect */
+        .glass-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .glass-dark {
+        .glass-card-dark {
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -154,14 +154,14 @@
         }
 
         /* Modern button styles */
-        .btn-modern {
+        .btn-primary {
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .btn-modern::before {
+        .btn-primary::before {
             content: '';
             position: absolute;
             top: 0;
@@ -172,7 +172,7 @@
             transition: left 0.5s;
         }
 
-        .btn-modern:hover::before {
+        .btn-primary:hover::before {
             left: 100%;
         }
 

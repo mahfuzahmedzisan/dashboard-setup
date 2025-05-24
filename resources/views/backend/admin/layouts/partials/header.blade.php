@@ -1,4 +1,4 @@
- <header class="glass border-b border-white/20 sticky top-0 z-30">
+ <header class="glass-card border-b border-white/20 sticky top-0 z-30">
      <div class="flex items-center justify-between p-4 lg:p-6">
          <div class="flex items-center gap-4">
              <!-- Menu Toggle Button -->
@@ -53,7 +53,7 @@
                      x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                      x-transition:leave="transition ease-in duration-75"
                      x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                     class="absolute right-0 mt-2 w-48 glass rounded-xl shadow-lg py-2 z-50">
+                     class="absolute right-0 mt-2 w-48 glass-card rounded-xl shadow-lg py-2 z-50">
                      <a href="#"
                          class="block px-4 py-2 text-white hover:bg-white/10 transition-colors">Profile</a>
                      <a href="#"

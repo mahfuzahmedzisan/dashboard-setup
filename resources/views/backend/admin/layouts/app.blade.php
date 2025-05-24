@@ -46,7 +46,7 @@
     <div x-show="mobile_menu_open && !desktop" x-transition:enter="transition-all duration-300 ease-out"
         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
         x-transition:leave="transition-all duration-300 ease-in" x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0" @click="closeMobileMenu()" class="fixed inset-0 z-40 glass-dark lg:hidden">
+        x-transition:leave-end="opacity-0" @click="closeMobileMenu()" class="fixed inset-0 z-40 glass-card-dark lg:hidden">
     </div>
     
     <div class="flex h-screen">
@@ -72,7 +72,7 @@
         x-transition:enter-start="opacity-0 translate-x-full" x-transition:enter-end="opacity-100 translate-x-0"
         x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 translate-x-0"
         x-transition:leave-end="opacity-0 translate-x-full"
-        class="fixed right-0 top-0 h-full w-80 glass z-50 p-6 overflow-y-auto custom-scrollbar">
+        class="fixed right-0 top-0 h-full w-80 glass-card z-50 p-6 overflow-y-auto custom-scrollbar">
         <div class="flex items-center justify-between mb-6">
             <h3 class="text-xl font-bold text-white">Notifications</h3>
             <button @click="toggleNotifications()" class="p-2 rounded-lg hover:bg-white/10 transition-colors">
@@ -543,8 +543,8 @@
 
         // Add loading states for interactive elements
         document.addEventListener('click', function(e) {
-            if (e.target.matches('.btn-modern') || e.target.closest('.btn-modern')) {
-                const btn = e.target.matches('.btn-modern') ? e.target : e.target.closest('.btn-modern');
+            if (e.target.matches('.btn-primary') || e.target.closest('.btn-primary')) {
+                const btn = e.target.matches('.btn-primary') ? e.target : e.target.closest('.btn-primary');
                 btn.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     btn.style.transform = '';
