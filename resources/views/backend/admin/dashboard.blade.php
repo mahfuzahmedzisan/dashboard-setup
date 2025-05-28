@@ -23,9 +23,9 @@
                         +12%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-1" x-text="stats.users.toLocaleString()">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-text-white mb-1" x-text="stats.users.toLocaleString()">
                     12,384</h3>
-                <p class="text-white/60 text-sm">Total Users</p>
+                <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Total Users</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full progress-bar"
                         style="width: 75%;"></div>
@@ -43,9 +43,9 @@
                         +23%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-1">$<span
+                <h3 class="text-2xl font-bold text-text-white mb-1">$<span
                         x-text="stats.revenue.toLocaleString()">48,392</span></h3>
-                <p class="text-white/60 text-sm">Total Revenue</p>
+                <p class="text-text-dark-primary text-sm">Total Revenue</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full progress-bar"
                         style="width: 60%;"></div>
@@ -63,9 +63,9 @@
                         -5%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-1" x-text="stats.orders.toLocaleString()">
+                <h3 class="text-2xl font-bold text-text-white mb-1" x-text="stats.orders.toLocaleString()">
                     2,847</h3>
-                <p class="text-white/60 text-sm">Total Orders</p>
+                <p class="text-text-dark-primary text-sm">Total Orders</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full progress-bar"
                         style="width: 45%;"></div>
@@ -83,8 +83,8 @@
                         Live
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-1" x-text="stats.activeUsers.toLocaleString()">847</h3>
-                <p class="text-white/60 text-sm">Active Users</p>
+                <h3 class="text-2xl font-bold text-text-white mb-1" x-text="stats.activeUsers.toLocaleString()">847</h3>
+                <p class="text-text-dark-primary text-sm">Active Users</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full pulse-slow progress-bar"
                         style="width: 85%;"></div>
@@ -101,17 +101,17 @@
             <div class="lg:col-span-2 glass-card rounded-2xl p-6 card-hover">
                 <div class="flex items-center justify-between mb-6">
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-1">Revenue Analytics</h3>
-                        <p class="text-white/60 text-sm">Monthly revenue breakdown</p>
+                        <h3 class="text-xl font-bold text-text-white mb-1">Revenue Analytics</h3>
+                        <p class="text-text-dark-primary text-sm">Monthly revenue breakdown</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <select
-                            class="bg-white/10 text-white text-sm px-3 py-2 rounded-lg border border-white/20 outline-none">
+                            class="bg-white/10 text-text-white text-sm px-3 py-2 rounded-lg border border-white/20 outline-none">
                             <option value="monthly">Monthly</option>
                             <option value="weekly">Weekly</option>
                             <option value="daily">Daily</option>
                         </select>
-                        <button class="btn-primary text-white text-sm px-4 py-2 rounded-xl flex items-center gap-2">
+                        <button class="btn-primary text-text-white text-sm px-4 py-2 rounded-xl flex items-center gap-2">
                             <i data-lucide="download" class="w-4 h-4"></i>
                             Export
                         </button>
@@ -127,8 +127,8 @@
                 <!-- Recent Activity -->
                 <div class="glass-card rounded-2xl p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-white">Recent Activity</h3>
-                        <button class="text-white/60 hover:text-white transition-colors">
+                        <h3 class="text-lg font-bold text-text-white">Recent Activity</h3>
+                        <button class="text-text-dark-primary hover:text-text-white transition-colors">
                             <i data-lucide="more-horizontal" class="w-5 h-5"></i>
                         </button>
                     </div>
@@ -140,8 +140,8 @@
                                     <i :data-lucide="activity.icon" class="w-4 h-4" :class="activity.iconColor"></i>
                                 </div>
                                 <div class="flex-1">
-                                    <p class="text-white text-sm font-medium" x-text="activity.title"></p>
-                                    <p class="text-white/60 text-xs" x-text="activity.time"></p>
+                                    <p class="text-text-white text-sm font-medium" x-text="activity.title"></p>
+                                    <p class="text-text-dark-primary text-xs" x-text="activity.time"></p>
                                 </div>
                             </div>
                         </template>
@@ -150,25 +150,25 @@
 
                 <!-- Quick Actions -->
                 <div class="glass-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">Quick Actions</h3>
+                    <h3 class="text-lg font-bold text-text-white mb-4">Quick Actions</h3>
                     <div class="grid grid-cols-2 gap-3">
                         <button
-                            class="btn-primary p-3 rounded-xl text-white text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                            class="btn-primary p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform">
                             <i data-lucide="plus" class="w-4 h-4"></i>
                             Add User
                         </button>
                         <button
-                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
                             <i data-lucide="mail" class="w-4 h-4"></i>
                             Send Mail
                         </button>
                         <button
-                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
                             <i data-lucide="file-text" class="w-4 h-4"></i>
                             Reports
                         </button>
                         <button
-                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
+                            class="bg-white/10 hover:bg-white/20 p-3 rounded-xl text-text-white text-sm font-medium flex items-center justify-center gap-2 border border-white/20 hover:scale-105 transition-all">
                             <i data-lucide="settings" class="w-4 h-4"></i>
                             Settings
                         </button>
@@ -183,7 +183,7 @@
             class="space-y-6">
 
             <div class="glass-card rounded-2xl p-6">
-                <h2 class="text-2xl font-bold text-white mb-6">Analytics Dashboard</h2>
+                <h2 class="text-2xl font-bold text-text-white mb-6">Analytics Dashboard</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors">
                         <div class="flex items-center gap-3 mb-3">
@@ -191,14 +191,14 @@
                                 <i data-lucide="eye" class="w-5 h-5 text-blue-400"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-medium">Page Views</h4>
-                                <p class="text-white/60 text-sm">Last 30 days</p>
+                                <h4 class="text-text-white font-medium">Page Views</h4>
+                                <p class="text-text-dark-primary text-sm">Last 30 days</p>
                             </div>
                         </div>
-                        <div class="text-2xl font-bold text-white mb-2">1,234,567</div>
+                        <div class="text-2xl font-bold text-text-white mb-2">1,234,567</div>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="text-green-400">+15.3%</span>
-                            <span class="text-white/60">vs last month</span>
+                            <span class="text-text-dark-primary">vs last month</span>
                         </div>
                     </div>
 
@@ -208,14 +208,14 @@
                                 <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-green-400"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-medium">Click Rate</h4>
-                                <p class="text-white/60 text-sm">Average CTR</p>
+                                <h4 class="text-text-white font-medium">Click Rate</h4>
+                                <p class="text-text-dark-primary text-sm">Average CTR</p>
                             </div>
                         </div>
-                        <div class="text-2xl font-bold text-white mb-2">3.42%</div>
+                        <div class="text-2xl font-bold text-text-white mb-2">3.42%</div>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="text-green-400">+0.8%</span>
-                            <span class="text-white/60">vs last month</span>
+                            <span class="text-text-dark-primary">vs last month</span>
                         </div>
                     </div>
 
@@ -225,14 +225,14 @@
                                 <i data-lucide="clock" class="w-5 h-5 text-purple-400"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-medium">Avg. Session</h4>
-                                <p class="text-white/60 text-sm">Duration</p>
+                                <h4 class="text-text-white font-medium">Avg. Session</h4>
+                                <p class="text-text-dark-primary text-sm">Duration</p>
                             </div>
                         </div>
-                        <div class="text-2xl font-bold text-white mb-2">4m 32s</div>
+                        <div class="text-2xl font-bold text-text-white mb-2">4m 32s</div>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="text-red-400">-12s</span>
-                            <span class="text-white/60">vs last month</span>
+                            <span class="text-text-dark-primary">vs last month</span>
                         </div>
                     </div>
                 </div>
@@ -246,8 +246,8 @@
 
             <div class="glass-card rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-white">User Management</h2>
-                    <button class="btn-primary px-4 py-2 rounded-xl text-white flex items-center gap-2">
+                    <h2 class="text-2xl font-bold text-text-white">User Management</h2>
+                    <button class="btn-primary px-4 py-2 rounded-xl text-text-white flex items-center gap-2">
                         <i data-lucide="user-plus" class="w-4 h-4"></i>
                         Add User
                     </button>
@@ -258,11 +258,11 @@
                     <table class="w-full">
                         <thead>
                             <tr class="border-b border-white/10">
-                                <th class="text-left text-white/60 font-medium py-3 px-4">User</th>
-                                <th class="text-left text-white/60 font-medium py-3 px-4">Email</th>
-                                <th class="text-left text-white/60 font-medium py-3 px-4">Role</th>
-                                <th class="text-left text-white/60 font-medium py-3 px-4">Status</th>
-                                <th class="text-left text-white/60 font-medium py-3 px-4">Actions</th>
+                                <th class="text-left text-text-dark-primary font-medium py-3 px-4">User</th>
+                                <th class="text-left text-text-dark-primary font-medium py-3 px-4">Email</th>
+                                <th class="text-left text-text-dark-primary font-medium py-3 px-4">Role</th>
+                                <th class="text-left text-text-dark-primary font-medium py-3 px-4">Status</th>
+                                <th class="text-left text-text-dark-primary font-medium py-3 px-4">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -273,14 +273,14 @@
                                             <img :src="user.avatar" :alt="user.name"
                                                 class="w-10 h-10 rounded-xl object-cover">
                                             <div>
-                                                <div class="text-white font-medium" x-text="user.name">
+                                                <div class="text-text-white font-medium" x-text="user.name">
                                                 </div>
-                                                <div class="text-white/60 text-sm" x-text="user.username">
+                                                <div class="text-text-dark-primary text-sm" x-text="user.username">
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="py-4 px-4 text-white/80" x-text="user.email"></td>
+                                    <td class="py-4 px-4 text-text-white/80" x-text="user.email"></td>
                                     <td class="py-4 px-4">
                                         <span class="px-3 py-1 rounded-full text-xs font-medium"
                                             :class="user.role === 'admin' ? 'bg-red-500/20 text-red-400' : user
@@ -297,7 +297,7 @@
                                     <td class="py-4 px-4">
                                         <div class="flex items-center gap-2">
                                             <button class="p-2 rounded-lg hover:bg-white/10 transition-colors">
-                                                <i data-lucide="edit" class="w-4 h-4 text-white/60"></i>
+                                                <i data-lucide="edit" class="w-4 h-4 text-text-dark-primary"></i>
                                             </button>
                                             <button class="p-2 rounded-lg hover:bg-white/10 transition-colors">
                                                 <i data-lucide="trash-2" class="w-4 h-4 text-red-400"></i>
@@ -319,8 +319,8 @@
 
             <div class="glass-card rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-6">
-                    <h2 class="text-2xl font-bold text-white">Projects</h2>
-                    <button class="btn-primary px-4 py-2 rounded-xl text-white flex items-center gap-2">
+                    <h2 class="text-2xl font-bold text-text-white">Projects</h2>
+                    <button class="btn-primary px-4 py-2 rounded-xl text-text-white flex items-center gap-2">
                         <i data-lucide="folder-plus" class="w-4 h-4"></i>
                         New Project
                     </button>
@@ -337,15 +337,15 @@
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                                        <span class="text-white text-xs font-medium" x-text="project.team"></span>
+                                        <span class="text-text-white text-xs font-medium" x-text="project.team"></span>
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="text-white font-bold text-lg mb-2" x-text="project.name"></h3>
-                            <p class="text-white/60 text-sm mb-4" x-text="project.description"></p>
+                            <h3 class="text-text-white font-bold text-lg mb-2" x-text="project.name"></h3>
+                            <p class="text-text-dark-primary text-sm mb-4" x-text="project.description"></p>
                             <div class="flex items-center justify-between mb-3">
-                                <span class="text-white/60 text-sm">Progress</span>
-                                <span class="text-white text-sm font-medium" x-text="project.progress + '%'"></span>
+                                <span class="text-text-dark-primary text-sm">Progress</span>
+                                <span class="text-text-white text-sm font-medium" x-text="project.progress + '%'"></span>
                             </div>
                             <div class="h-2 bg-white/10 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-blue-400 to-purple-500 rounded-full transition-all duration-1000"
@@ -357,7 +357,7 @@
                                         project.status === 'pending' ?
                                         'bg-yellow-500/20 text-yellow-400' : 'bg-red-500/20 text-red-400'"
                                     x-text="project.status"></span>
-                                <span class="text-white/60 text-sm" x-text="project.deadline"></span>
+                                <span class="text-text-dark-primary text-sm" x-text="project.deadline"></span>
                             </div>
                         </div>
                     </template>
@@ -371,7 +371,7 @@
             class="space-y-6">
 
             <div class="glass-card rounded-2xl p-6">
-                <h2 class="text-2xl font-bold text-white mb-6">Messages</h2>
+                <h2 class="text-2xl font-bold text-text-white mb-6">Messages</h2>
                 <div class="space-y-4">
                     <template x-for="message in messages" :key="message.id">
                         <div
@@ -380,11 +380,11 @@
                                 class="w-12 h-12 rounded-xl object-cover">
                             <div class="flex-1">
                                 <div class="flex items-center justify-between mb-2">
-                                    <h4 class="text-white font-medium" x-text="message.sender"></h4>
-                                    <span class="text-white/60 text-sm" x-text="message.time"></span>
+                                    <h4 class="text-text-white font-medium" x-text="message.sender"></h4>
+                                    <span class="text-text-dark-primary text-sm" x-text="message.time"></span>
                                 </div>
-                                <p class="text-white/80 text-sm mb-2" x-text="message.subject"></p>
-                                <p class="text-white/60 text-sm" x-text="message.preview"></p>
+                                <p class="text-text-white/80 text-sm mb-2" x-text="message.subject"></p>
+                                <p class="text-text-dark-primary text-sm" x-text="message.preview"></p>
                             </div>
                             <div x-show="!message.read" class="w-3 h-3 bg-blue-400 rounded-full"></div>
                         </div>

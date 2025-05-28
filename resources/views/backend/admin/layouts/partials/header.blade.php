@@ -3,15 +3,15 @@
          <div class="flex items-center gap-4">
              <!-- Menu Toggle Button -->
              <button @click="toggleSidebar()"
-                 class="p-2 rounded-xl hover:bg-white/10 text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 group"
+                 class="p-2 rounded-xl hover:bg-white/10 dark:text-text-white text-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 group"
                  :aria-label="desktop ? (sidebar_expanded ? 'Collapse sidebar' : 'Expand sidebar') : (mobile_menu_open ?
                      'Close menu' : 'Open menu')">
                  <i data-lucide="menu" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
              </button>
 
              <div class="hidden sm:block">
-                 <h1 class="text-xl lg:text-2xl font-bold text-white">Good morning, Alex!</h1>
-                 <p class="text-white/60 text-sm">Here's what's happening today</p>
+                 <h1 class="text-xl lg:text-2xl font-bold dark:text-text-white text-gray-800">Good morning, Alex!</h1>
+                 <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Here's what's happening today</p>
              </div>
          </div>
 
@@ -19,22 +19,22 @@
          <div class="flex items-center gap-3">
              <!-- Search -->
              <div class="hidden md:flex items-center gap-2 bg-white/10 rounded-xl px-4 py-2 border border-white/20">
-                 <i data-lucide="search" class="w-4 h-4 text-white/60"></i>
+                 <i data-lucide="search" class="w-4 h-4 text-text-black/60 dark:text-text-dark-primary"></i>
                  <input type="text" placeholder="Search..." x-model="searchQuery" @input="handleSearch()"
-                     class="bg-transparent text-white placeholder-white/60 text-sm outline-none w-32 lg:w-48">
-                 <kbd class="bg-white/10 text-white/60 text-xs px-2 py-1 rounded">⌘K</kbd>
+                     class="bg-transparent text-text-white placeholder-white/60 text-sm outline-none w-32 lg:w-48">
+                 <kbd class="bg-white/10 dark:text-text-dark-primary text-xs px-2 py-1 rounded">⌘K</kbd>
              </div>
 
              <!-- Theme Toggle -->
              <button @click="toggleTheme()" class="p-2 rounded-xl hover:bg-white/10 transition-colors "
                  data-tooltip="Toggle theme">
-                 <i data-lucide="sun" x-show="!darkMode" class="w-5 h-5 text-white"></i>
-                 <i data-lucide="moon" x-show="darkMode" class="w-5 h-5 text-white"></i>
+                 <i data-lucide="sun" x-show="!darkMode" class="w-5 h-5 text-text-white"></i>
+                 <i data-lucide="moon" x-show="darkMode" class="w-5 h-5 text-text-white"></i>
              </button>
 
              <!-- Notifications -->
              <button @click="toggleNotifications()" class="relative p-2 rounded-xl hover:bg-white/10 transition-colors">
-                 <i data-lucide="bell" class="w-5 h-5 text-white"></i>
+                 <i data-lucide="bell" class="w-5 h-5 text-text-white"></i>
                  <div x-show="notifications.length > 0"
                      class="absolute top-1 right-1 w-2 h-2 bg-red-400 rounded-full notification-badge">
                  </div>
@@ -55,11 +55,11 @@
                      x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                      class="absolute right-0 mt-2 w-48 glass-card rounded-xl shadow-lg py-2 z-50">
                      <a href="#"
-                         class="block px-4 py-2 text-white hover:bg-white/10 transition-colors">Profile</a>
+                         class="block px-4 py-2 text-text-white hover:bg-white/10 transition-colors">Profile</a>
                      <a href="#"
-                         class="block px-4 py-2 text-white hover:bg-white/10 transition-colors">Settings</a>
+                         class="block px-4 py-2 text-text-white hover:bg-white/10 transition-colors">Settings</a>
                      <div class="border-t border-white/10 my-2"></div>
-                     <a href="#" class="block px-4 py-2 text-white hover:bg-white/10 transition-colors">Sign
+                     <a href="#" class="block px-4 py-2 text-text-white hover:bg-white/10 transition-colors">Sign
                          out</a>
                  </div>
              </div>
@@ -68,10 +68,10 @@
 
      <!-- Breadcrumb -->
      <div class="px-4 lg:px-6 pb-4">
-         <nav class="flex items-center gap-2 text-sm text-white/60">
-             <a href="#" class="hover:text-white transition-colors">Dashboard</a>
+         <nav class="flex items-center gap-2 text-sm text-gray-800/60 dark:text-text-dark-primary">
+             <a href="{{ route('admin.dashboard') }}" class="hover:text-text-white transition-colors">Dashboard</a>
              <i data-lucide="chevron-right" class="w-4 h-4"></i>
-             <span class="text-white capitalize" x-text="activeTab"></span>
+             <span class="text-gray-800 dark:text-text-white capitalize" x-text="activeTab"></span>
          </nav>
      </div>
  </header>

@@ -13,7 +13,7 @@
         <div class="p-6 border-b border-white/10">
             <div class="flex items-center gap-4">
                 <div class="w-10 h-10 btn-primary rounded-xl flex items-center justify-center shadow-lg">
-                    <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                    <i data-lucide="zap" class="w-6 h-6 text-text-white"></i>
                 </div>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                     x-transition:enter="transition-all duration-300 delay-75"
@@ -21,8 +21,8 @@
                     x-transition:leave="transition-all duration-200"
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4">
-                    <h1 class="text-xl font-bold text-white">Dashboard</h1>
-                    <p class="text-white/60 text-sm">Dashboard Pro</p>
+                    <h1 class="text-xl font-bold text-text-white">Dashboard</h1>
+                    <p class="text-text-dark-primary text-sm">Dashboard Pro</p>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
         <nav class="p-4 space-y-2">
             <!-- Dashboard -->
             <a href="#" @click="setActiveTab('dashboard')" :class="{ 'active': activeTab === 'dashboard' }"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i data-lucide="layout-dashboard" class="w-5 h-5 text-blue-400 flex-shrink-0"></i>
@@ -71,7 +71,7 @@
 
             <!-- Analytics -->
             <a href="#" @click="setActiveTab('analytics')" :class="{ 'active': activeTab === 'analytics' }"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                     <i data-lucide="bar-chart-3" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
@@ -85,12 +85,12 @@
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4" class="font-medium">Analytics</span>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
-                    class="ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full">New</div>
+                    class="ml-auto bg-red-500 text-text-white text-xs px-2 py-1 rounded-full">New</div>
             </a>
 
             <!-- Users -->
             <a href="#" @click="setActiveTab('users')" :class="{ 'active': activeTab === 'users' }"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i data-lucide="users" class="w-5 h-5 text-purple-400 flex-shrink-0"></i>
@@ -102,12 +102,12 @@
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4" class="font-medium">Users</span>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
-                    class="ml-auto text-white/60 text-sm">1.2k</div>
+                    class="ml-auto text-text-dark-primary text-sm">1.2k</div>
             </a>
 
             <!-- Projects -->
             <a href="#" @click="setActiveTab('projects')" :class="{ 'active': activeTab === 'projects' }"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i data-lucide="folder" class="w-5 h-5 text-yellow-400 flex-shrink-0"></i>
@@ -122,7 +122,7 @@
 
             <!-- Messages -->
             <a href="#" @click="setActiveTab('messages')" :class="{ 'active': activeTab === 'messages' }"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform relative">
                     <i data-lucide="message-circle" class="w-5 h-5 text-pink-400 flex-shrink-0"></i>
@@ -137,7 +137,7 @@
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4" class="font-medium">Messages</span>
                 <div x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
-                    class="ml-auto bg-pink-500 text-white text-xs px-2 py-1 rounded-full">3</div>
+                    class="ml-auto bg-pink-500 text-text-white text-xs px-2 py-1 rounded-full">3</div>
             </a>
 
             <!-- Divider -->
@@ -145,7 +145,7 @@
 
             <!-- Settings -->
             <a href="#"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-gray-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i data-lucide="settings" class="w-5 h-5 text-gray-400 flex-shrink-0"></i>
@@ -161,7 +161,7 @@
 
             <!-- Help -->
             <a href="#"
-                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-white transition-all duration-200 group">
+                class="sidebar-item flex items-center gap-4 p-3 rounded-xl hover:bg-white/10 text-text-white transition-all duration-200 group">
                 <div
                     class="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <i data-lucide="help-circle" class="w-5 h-5 text-indigo-400 flex-shrink-0"></i>
@@ -194,12 +194,12 @@
                     x-transition:leave="transition-all duration-200"
                     x-transition:leave-start="opacity-100 translate-x-0"
                     x-transition:leave-end="opacity-0 -translate-x-4" class="flex-1">
-                    <p class="text-white text-sm font-medium">Alex Johnson</p>
-                    <p class="text-white/60 text-xs">Product Manager</p>
+                    <p class="text-text-white text-sm font-medium">Alex Johnson</p>
+                    <p class="text-text-dark-primary text-xs">Product Manager</p>
                 </div>
                 <button x-show="(desktop && sidebar_expanded) || (!desktop && mobile_menu_open)"
                     class="w-8 h-8 rounded-lg hover:bg-white/10 flex items-center justify-center transition-colors">
-                    <i data-lucide="more-horizontal" class="w-4 h-4 text-white/60"></i>
+                    <i data-lucide="more-horizontal" class="w-4 h-4 text-text-dark-primary"></i>
                 </button>
             </div>
         </div>
